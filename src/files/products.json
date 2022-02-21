@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Regla",
+    "price": "100",
+    "thumbnail": "http://localhost:8080/img/1644592929662-regla.jpeg",
+    "id": 1
+  },
+  {
+    "title": "Compas",
+    "price": "150",
+    "thumbnail": "http://localhost:8080/img/1644592946460-compas.jpeg",
+    "id": 2
+  },
+  {
+    "title": "Cuaderno",
+    "price": "300",
+    "thumbnail": "http://localhost:8080/img/1644592959911-cuaderno.jpeg",
+    "id": 3
+  }
+]

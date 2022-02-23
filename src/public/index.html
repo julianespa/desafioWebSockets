@@ -9,15 +9,28 @@
 </head>
 <body>
     <form id="productForm">
-        <label>Title</label>
-        <input name="title">
-        <label>Price</label>
-        <input name="price">
-        <label>Image</label>
-        <input type="file" name="file">
+        <div>
+            <label>Title</label>
+            <input name="title">
+        </div>
+        <div>
+            <label>Price</label>
+            <input name="price">
+        </div>
+        <div>
+            <label>Image</label>
+            <input type="file" name="file">
+        </div>
         <input type="submit">
     </form>
     <div id="productsTemplate"></div>
+    <div id="chat">
+        <p id="log"></p>
+        <form>
+            <input type="email" name="email" id="email" placeholder="email">
+            <input type="text" id="chatBox" placeholder="message">
+        </form>
+    </div>
     
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/ejs@3.1.6/ejs.min.js"></script>

@@ -15,6 +15,32 @@ const handleSubmit = (e,form,route)=>{
 
 form.addEventListener('submit',(e)=>handleSubmit(e,e.target,'/'))
 
+// chat
+let email = document.getElementById('email')
+let chatBox= document.getElementById('chatBox')
+
+chatBox.addEventListener('keyup',(e)=>{
+    e.preventDefault()
+    let date = new Date()
+    let y = date.getFullYear()
+    let m = date.getMonth()+1
+    let d = date.getDate()
+    let h = date.getHours()
+    let min = date.getMinutes()
+    if(e.key === 'Enter'){
+        if(chatBox.value.trim().length > 0 && email.value.trim().length > 0){
+            socket.emit('message',{
+                email:email.value,
+                date:`${y}/${m}/${d} ${h}:${min}`,
+                message:chatBox.value
+            })
+            chatBox.value = ''
+            email.value = ''
+        }
+        else {console.log('fallo')}
+    }
+})
+
 socket.on('productLog',data=>{
     console.log(data)
 
@@ -27,4 +53,14 @@ socket.on('productLog',data=>{
         productsTemplate.innerHTML = html
     })
 
+})
+
+socket.on('log',data=>{
+    let log = document.getElementById('log')
+    let messages = ''
+    
+    data.forEach(message => {
+        messages = messages+`<span class="email">${message.email}</span> <span class="date">${message.date}</span> dice <span class="message">${message.message}</span> <br>`
+    });
+    log.innerHTML = messages
 })

@@ -18,16 +18,16 @@ form.addEventListener('submit',(e)=>handleSubmit(e,e.target,'/'))
 // chat
 let email = document.getElementById('email')
 let chatBox= document.getElementById('chatBox')
+let chatForm = document.getElementById('chatForm')
 
-chatBox.addEventListener('keyup',(e)=>{
+const handleChatForm = (e)=>{
     e.preventDefault()
-    let date = new Date()
-    let y = date.getFullYear()
-    let m = date.getMonth()+1
-    let d = date.getDate()
-    let h = date.getHours()
-    let min = date.getMinutes()
-    if(e.key === 'Enter'){
+        let date = new Date()
+        let y = date.getFullYear()
+        let m = date.getMonth()+1
+        let d = date.getDate()
+        let h = date.getHours()
+        let min = date.getMinutes()
         if(chatBox.value.trim().length > 0 && email.value.trim().length > 0){
             socket.emit('message',{
                 email:email.value,
@@ -38,6 +38,11 @@ chatBox.addEventListener('keyup',(e)=>{
             email.value = ''
         }
         else {console.log('fallo')}
+}
+chatForm.addEventListener('submit',(e)=>{
+    handleChatForm(e)
+    if(e.key === 'Enter'){
+        handleChatForm(e)
     }
 })
 

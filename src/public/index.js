@@ -47,7 +47,7 @@ chatForm.addEventListener('submit',(e)=>{
 })
 
 socket.on('productLog',data=>{
-    console.log(data)
+    
 
     let products = data.payload
     let productsTemplate = document.getElementById('productsTemplate')

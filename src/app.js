@@ -37,5 +37,6 @@ io.on('connection', async socket=>{
         console.log(data)
         await logService.add(data)
         .then(r=>console.log(r))
+        io.emit('log',log)
     })
 })

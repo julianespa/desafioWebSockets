@@ -16,5 +16,23 @@
     "price": "300",
     "thumbnail": "http://localhost:8080/img/1644592959911-cuaderno.jpeg",
     "id": 3
+  },
+  {
+    "title": "gdf",
+    "price": "7",
+    "thumbnail": "http://localhost:8080/img/1647222639597-cow-and-dolphin-cow-and-dolphin-hd-wallpaper-preview.jpeg",
+    "id": 4
+  },
+  {
+    "title": "tret",
+    "price": "4",
+    "thumbnail": "http://localhost:8080/img/1647222661381-cow-and-dolphin-cow-and-dolphin-hd-wallpaper-preview.jpeg",
+    "id": 5
+  },
+  {
+    "title": "gfdgds",
+    "price": "57567",
+    "thumbnail": "http://localhost:8080/img/1647222767515-Oferta de trabajo J3L  (2).png",
+    "id": 6
   }
 ]
